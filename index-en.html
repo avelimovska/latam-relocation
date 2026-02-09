@@ -13,6 +13,26 @@
   <link rel="alternate" hreflang="es" href="index-es.html">
 </head>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.faq-toggle').forEach((btn) => {
+      btn.setAttribute('aria-expanded', 'false');
+
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+        // закрыть все
+        document.querySelectorAll('.faq-toggle').forEach((b) => {
+          b.setAttribute('aria-expanded', 'false');
+        });
+
+        // открыть текущий
+        if (!isOpen) btn.setAttribute('aria-expanded', 'true');
+      });
+    });
+  });
+</script>
+
 <body>
   <div id="root">
     <div class="min-h-screen bg-gradient-to-b from-blue-50 to-white">
@@ -785,107 +805,176 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12">
             <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Answers to the main questions about relocation and
-              obtaining residency in Uruguay</p>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+              Answers to the main questions about relocation and obtaining residency in Uruguay
+            </p>
           </div>
+
           <div class="space-y-4">
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">How long does it take to get residence and permanent
-                  residence in Uruguay?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-1">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  How long does it take to obtain temporary and permanent residency in Uruguay?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-1" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  Processing times depend on the city and the workload of immigration authorities. Temporary residency
+                  is granted after submitting the documents, and permanent residency is typically reviewed about 4–6
+                  months after submitting the full package.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">What income is needed to apply for
-                  residence/permanent residence?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-2">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  What level of income is required to apply for residency?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-2" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  As a guideline, a stable income of about $800–$1,000 per person per month is recommended. Exact
+                  requirements may vary depending on your situation and the city where you apply.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">Do you need to know Spanish to submit
-                  documents?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-3">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  Is it necessary to know Spanish to submit the documents?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-3" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  Knowledge of Spanish is not mandatory for submitting your application. However, basic Spanish greatly
+                  simplifies adaptation and communication in Uruguay.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">Do you need to live in Uruguay constantly?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-4">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  Is it mandatory to live permanently in Uruguay?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-4" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  To maintain residency, it is important to keep ties with the country and comply with immigration
+                  requirements. Demonstrating actual residence and integration into local life is essential.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">In what cases can permanent residency be denied in
-                  Uruguay?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-5">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  In what cases can permanent residency in Uruguay be denied?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-5" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  A denial is possible in the case of serious criminal convictions (offenses punishable by more than two
+                  years in prison) or a repeated criminal history.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">How long do you need to live to get a Uruguay
-                  passport?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-6">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  How long must you live in Uruguay to obtain a passport?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-6" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  Married couples and families with children can typically apply for citizenship after about 3 years of
+                  legal residence; single applicants usually after about 5 years.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">In what cases can permanent residency be revoked in
-                  Uruguay?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-7">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  In what cases can permanent residency in Uruguay be revoked?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-7" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  Permanent residency may be revoked if false information or forged documents are discovered, in cases
+                  of serious intentional crimes, major violations of immigration law, threats to public safety, or
+                  prolonged absence from the country.
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
       </section>
