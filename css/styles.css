@@ -5243,3 +5243,24 @@
         opacity: 0
     }
 }
+
+/* FAQ accordion */
+.faq-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 300ms ease, opacity 200ms ease;
+}
+
+.faq-toggle[aria-expanded="true"]+.faq-content {
+    max-height: 1000px;
+    opacity: 1;
+}
+
+.faq-icon {
+    transition: transform 200ms ease;
+}
+
+.faq-toggle[aria-expanded="true"] .faq-icon {
+    transform: rotate(180deg);
+}
