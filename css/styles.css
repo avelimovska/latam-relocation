@@ -5244,15 +5244,15 @@
     }
 }
 
-/* FAQ accordion */
 .faq-content {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
     transition: max-height 300ms ease, opacity 200ms ease;
+    border-top: 1px solid #e5e7eb;
 }
 
-.faq-toggle[aria-expanded="true"]+.faq-content {
+.faq-toggle[aria-expanded="true"] + .faq-content {
     max-height: 1000px;
     opacity: 1;
 }
@@ -5264,3 +5264,14 @@
 .faq-toggle[aria-expanded="true"] .faq-icon {
     transform: rotate(180deg);
 }
+
+/* focus только для TAB */
+.faq-toggle:focus {
+  outline: none;
+}
+
+.faq-toggle:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
+
