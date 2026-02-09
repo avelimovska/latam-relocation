@@ -12,6 +12,26 @@
   <link rel="alternate" hreflang="es" href="index-es.html">
 </head>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.faq-toggle').forEach((btn) => {
+      btn.setAttribute('aria-expanded', 'false');
+
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+        // закрыть все
+        document.querySelectorAll('.faq-toggle').forEach((b) => {
+          b.setAttribute('aria-expanded', 'false');
+        });
+
+        // открыть текущий
+        if (!isOpen) btn.setAttribute('aria-expanded', 'true');
+      });
+    });
+  });
+</script>
+
 <body>
   <div id="root">
     <div class="min-h-screen bg-gradient-to-b from-blue-50 to-white">
@@ -785,107 +805,176 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12">
             <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Preguntas frecuentes</h2>
-            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Respuestas a las preguntas principales sobre reubicación
-              y obtención de residencia en Uruguay</p>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+              Respuestas a las principales preguntas sobre la reubicación y la obtención de la residencia en Uruguay
+            </p>
           </div>
+
           <div class="space-y-4">
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">¿Cuánto tiempo lleva obtener residencia y residencia
-                  permanente en Uruguay?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-1">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  ¿Cuánto tiempo toma obtener la residencia temporal y permanente en Uruguay?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-1" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  Los plazos dependen de la ciudad y de la carga de trabajo de las autoridades migratorias. La
+                  residencia temporal se otorga después de presentar los documentos, y la residencia permanente
+                  normalmente se revisa aproximadamente entre 4 y 6 meses después de presentar el paquete completo.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">¿Qué ingresos se necesitan para solicitar
-                  residencia/residencia permanente?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-2">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  ¿Qué ingresos se necesitan para solicitar la residencia?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-2" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  Como referencia, se requiere un ingreso estable de entre $800 y $1.000 por persona al mes. Los
+                  requisitos exactos pueden variar según la situación y la ciudad donde se realice la solicitud.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">¿Necesito saber español para presentar
-                  documentos?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-3">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  ¿Es necesario saber español para presentar los documentos?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-3" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  El conocimiento del español no es obligatorio para presentar la solicitud. Sin embargo, un nivel
+                  básico facilita mucho la adaptación y la comunicación en Uruguay.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">¿Debo vivir en Uruguay constantemente?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-4">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  ¿Es obligatorio vivir permanentemente en Uruguay?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-4" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  Para mantener la residencia es importante conservar vínculos con el país y cumplir con los requisitos
+                  migratorios. Es fundamental demostrar residencia real e integración en la vida local.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">¿En qué casos se puede denegar la residencia
-                  permanente en Uruguay?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-5">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  ¿En qué casos pueden rechazar la residencia permanente en Uruguay?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-5" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  El rechazo es posible en caso de antecedentes penales graves (delitos con penas superiores a 2 años de
+                  prisión) o un historial criminal reiterado.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">¿Cuánto tiempo debo vivir para obtener un pasaporte
-                  uruguayo?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-6">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  ¿Cuánto tiempo hay que vivir para obtener el pasaporte uruguayo?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-6" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  Las parejas y familias con hijos pueden solicitar la ciudadanía aproximadamente después de 3 años de
+                  residencia legal; los solicitantes solteros, después de unos 5 años.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">¿En qué casos se puede revocar la residencia
-                  permanente en Uruguay?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-7">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  ¿En qué casos pueden revocar la residencia permanente en Uruguay?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-7" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  La residencia permanente puede ser anulada si se detecta información falsa o documentos falsificados,
+                  en caso de delitos graves intencionales, violaciones importantes de la legislación migratoria o
+                  amenazas a la seguridad pública, así como por una ausencia prolongada del país.
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
       </section>

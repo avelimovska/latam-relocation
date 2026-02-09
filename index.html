@@ -13,6 +13,26 @@
   <link rel="alternate" hreflang="es" href="index-es.html">
 </head>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.faq-toggle').forEach((btn) => {
+      btn.setAttribute('aria-expanded', 'false');
+
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+        // закрыть все
+        document.querySelectorAll('.faq-toggle').forEach((b) => {
+          b.setAttribute('aria-expanded', 'false');
+        });
+
+        // открыть текущий
+        if (!isOpen) btn.setAttribute('aria-expanded', 'true');
+      });
+    });
+  });
+</script>
+
 <body>
   <div id="root">
     <div class="min-h-screen bg-gradient-to-b from-blue-50 to-white">
@@ -784,105 +804,175 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12">
             <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Часто задаваемые вопросы</h2>
-            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Ответы на основные вопросы о релокации и получении
-              резидентства в Уругвае</p>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+              Ответы на основные вопросы о релокации и получении резидентства в Уругвае
+            </p>
           </div>
+
           <div class="space-y-4">
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">Сколько времени занимает получение ВНЖ и ПМЖ в
-                  Уругвае?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-1">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  Сколько времени занимает получение ВНЖ и ПМЖ в Уругвае?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-1" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  Сроки зависят от города и загруженности миграционных служб. ВНЖ оформляется после подачи документов,
+                  ПМЖ обычно рассматривают примерно 4–6 месяцев после подачи полного пакета документов.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">Какой доход нужен для подачи на ВНЖ/ПМЖ?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-2">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  Какой доход нужен для подачи на ВНЖ/ПМЖ?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-2" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  Ориентир — стабильный доход от $800–1 000 на человека в месяц. Точные требования могут отличаться в
+                  зависимости от ситуации и города подачи.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">Нужно ли знать испанский язык для подачи
-                  документов?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-3">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  Нужно ли знать испанский язык для подачи документов?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-3" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  Знание испанского не является обязательным для подачи. Однако базовый испанский сильно упрощает
+                  адаптацию и коммуникацию в Уругвае.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">Обязательно ли постоянно жить в Уругвае?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-4">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  Обязательно ли постоянно жить в Уругвае?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-4" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  Для сохранения резидентства важно поддерживать связь со страной и соблюдать требования миграционных
+                  органов. Важно показывать фактическое проживание и интеграцию в местную жизнь.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">В каких случаях могут отказать в ПМЖ в
-                  Уругвае?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-5">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  В каких случаях могут отказать в ПМЖ в Уругвае?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-5" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  Отказ возможен при наличии серьёзных уголовных судимостей (преступления с наказанием более 2 лет
+                  лишения свободы) или повторяющейся криминальной истории.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">Сколько нужно прожить, чтобы получить паспорт
-                  Уругвая?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-6">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  Сколько нужно прожить, чтобы получить паспорт Уругвая?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-6" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  Для семейных пар и семей с детьми можно подавать на гражданство примерно через 3 года легального
+                  проживания; для одиноких заявителей — примерно 5 лет.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">В каких случаях могут лишить ПМЖ в Уругвае?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-7">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  В каких случаях могут лишить ПМЖ в Уругвае?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-7" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  ПМЖ может быть аннулировано, если выявят ложные данные/поддельные документы, при совершении тяжких
+                  умышленных преступлений, при серьёзных нарушениях миграционного законодательства и угрозе общественной
+                  безопасности, а также при длительном отсутствии в стране.
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
       </section>

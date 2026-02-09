@@ -12,6 +12,26 @@
   <link rel="alternate" hreflang="es" href="index-es.html">
 </head>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.faq-toggle').forEach((btn) => {
+      btn.setAttribute('aria-expanded', 'false');
+
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+        // закрыть все
+        document.querySelectorAll('.faq-toggle').forEach((b) => {
+          b.setAttribute('aria-expanded', 'false');
+        });
+
+        // открыть текущий
+        if (!isOpen) btn.setAttribute('aria-expanded', 'true');
+      });
+    });
+  });
+</script>
+
 <body>
   <div id="root">
     <div class="min-h-screen bg-gradient-to-b from-blue-50 to-white">
@@ -52,11 +72,11 @@
           <div class="max-w-3xl">
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">Паспорт Уругваю за 4–6
               років: іміграція, ВНП та ПМП</h1>
-            <p class="text-xl text-blue-100 mb-4 leading-relaxed">Уругвай — один із невеликих країн, де шлях до ПМЖ
+            <p class="text-xl text-blue-100 mb-4 leading-relaxed">Уругвай — один із невеликих країн, де шлях до ПМП
               простий і зрозумілий.</p>
-            <p class="text-lg text-blue-100 mb-8 leading-relaxed">Отримайте ПМЖ за ~6 місяців, виконуючи лише 3 основних
-              умови. Це не лотерея — у нашій практиці не було жодного відмови.</p><a href="https://t.me/latam_ukr_migration"
-              target="_blank" rel="noopener noreferrer"
+            <p class="text-lg text-blue-100 mb-8 leading-relaxed">Отримайте ПМП за ~6 місяців, виконуючи лише 3 основних
+              умови. Це не лотерея — у нашій практиці не було жодного відмови.</p><a
+              href="https://t.me/latam_ukr_migration" target="_blank" rel="noopener noreferrer"
               class="inline-flex items-center gap-3 bg-white hover:bg-gray-50 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"><svg
                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -70,7 +90,7 @@
             <div class="flex flex-wrap gap-8 mt-12 pt-8 border-t border-white/20">
               <div>
                 <div class="text-3xl font-bold text-white">~6 міс.</div>
-                <div class="text-blue-200">Термін отримання ПМЖ</div>
+                <div class="text-blue-200">Термін отримання ПМП</div>
               </div>
               <div>
                 <div class="text-3xl font-bold text-white">4–6 років</div>
@@ -172,7 +192,7 @@
                 <div
                   class="order-2 mt-8 bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition-shadow duration-300">
                   <div class="w-40 h-32 flex items-center justify-center text-center">
-                    <p class="text-sm font-medium text-gray-800 leading-snug">Отримання ВНЖ на 2 роки</p>
+                    <p class="text-sm font-medium text-gray-800 leading-snug">Отримання ВНП на 2 роки</p>
                   </div>
                 </div>
                 <div class="order-1 w-0.5 h-16 bg-gradient-to-b from-gray-300 to-transparent"></div>
@@ -217,7 +237,7 @@
                 <div
                   class="order-2 mt-8 bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition-shadow duration-300">
                   <div class="w-40 h-32 flex items-center justify-center text-center">
-                    <p class="text-sm font-medium text-gray-800 leading-snug">Отримання ПМЖ (рассмотрення 4–6 місяців)
+                    <p class="text-sm font-medium text-gray-800 leading-snug">Отримання ПМП (рассмотрення 4–6 місяців)
                     </p>
                   </div>
                 </div>
@@ -353,7 +373,7 @@
                 </div>
               </div>
               <div class="flex-1 bg-white rounded-lg shadow-md p-5 hover:shadow-lg transition-shadow duration-300">
-                <p class="text-base font-medium text-gray-800 leading-relaxed">Отримання ВНЖ на 2 роки</p>
+                <p class="text-base font-medium text-gray-800 leading-relaxed">Отримання ВНП на 2 роки</p>
               </div>
             </div>
             <div class="flex items-start gap-4" style="opacity: 1; transform: none;">
@@ -395,7 +415,7 @@
                 </div>
               </div>
               <div class="flex-1 bg-white rounded-lg shadow-md p-5 hover:shadow-lg transition-shadow duration-300">
-                <p class="text-base font-medium text-gray-800 leading-relaxed">Отримання ПМЖ (рассмотрення 4–6 місяців)
+                <p class="text-base font-medium text-gray-800 leading-relaxed">Отримання ПМП (рассмотрення 4–6 місяців)
                 </p>
               </div>
             </div>
@@ -425,9 +445,9 @@
       <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12">
-            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Тільки 3 основних умови для ПМЖ</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Тільки 3 основних умови для ПМП</h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">Іміграційна політика Уругвай проста: «Можеш ти
-              підтримуватися самостійно і не бути проблемою для моїх громадян? Тоді держи ПМЖ.»</p>
+              підтримуватися самостійно і не бути проблемою для моїх громадян? Тоді держи ПМП.»</p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div
@@ -441,7 +461,7 @@
                   </path>
                 </svg></div>
               <h3 class="text-xl font-semibold text-gray-900 mb-3">Відсутність судимостей</h3>
-              <p class="text-gray-600 leading-relaxed">Чисте кримінальне минуле — основне вимога для отримання ПМЖ</p>
+              <p class="text-gray-600 leading-relaxed">Чисте кримінальне минуле — основне вимога для отримання ПМП</p>
             </div>
             <div
               class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl border border-blue-100 hover:shadow-lg transition-shadow duration-300">
@@ -777,107 +797,177 @@
       <section class="py-20 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12">
-            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Часто задавані питання</h2>
-            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Відповіді на основні питання про релокацію та отримання
-              резидентства в Уругваї</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Поширені запитання</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+              Відповіді на основні запитання щодо релокації та отримання резидентства Уругваю?
+            </p>
           </div>
+
           <div class="space-y-4">
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">Скільки часу займає отримання ВНЖ та ПМЖ в
-                  Уругваї?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-1">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  Скільки часу займає отримання ВНП та ПМП Уругваю??
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-1" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  Терміни залежать від міста та завантаженості міграційних служб. ВНП оформлюється після подачі
+                  документів,
+                  ПМП зазвичай розглядають приблизно 4–6 місяців після подачі повного пакета документів.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">Який дохід потрібен для подачі на ВНЖ/ПМЖ?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-2">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  Який дохід потрібен для подачі на ВНП/?ПМП
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-2" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  Орієнтир — стабільний дохід від $800–1 000 на людину на місяць. Точні вимоги можуть відрізнятися
+                  залежно від ситуації та міста подачі.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">Чи потрібно знати іспанську мову для подачі
-                  документів?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-3">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  Чи потрібно знати іспанську мову для подачі документів?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-3" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  Знання іспанської не є обов’язковим для подачі. Однак базова іспанська значно спрощує адаптацію та
+                  комунікацію в Уругваї.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">Чи обов'язково потрібно жити в Уругваї
-                  постійно?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-4">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  Чи обов’язково постійно проживати в Уругваї?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-4" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  Для збереження резидентства важливо підтримувати зв’язок із країною та дотримуватися вимог міграційних
+                  органів. Важливо демонструвати фактичне проживання та інтеграцію в місцеве життя.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">В яких випадках можуть відмовити в ПМЖ в
-                  Уругваї?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-5">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  У яких випадках можуть відмовити у ПМП в Уругваї?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-5" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  Відмова можлива за наявності серйозних кримінальних судимостей (злочини з покаранням понад 2 роки
+                  позбавлення волі) або повторюваної кримінальної історії.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">Скільки потрібно прожити, щоб отримати паспорт
-                  Уругваї?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-6">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  Скільки потрібно прожити, щоб отримати паспорт Уругваю?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-6" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  Для сімейних пар і сімей з дітьми можна подавати на громадянство приблизно через 3 роки легального
+                  проживання; для одиноких заявників — приблизно через 5 років.
+                </div>
+              </div>
             </div>
+
             <div
-              class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
-              <button
-                class="w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"><span
-                  class="text-lg font-semibold text-gray-900 pr-4">В яких випадках можуть лишити ПМЖ в Уругваї?</span>
-                <div class="flex-shrink-0" style="transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-chevron-down w-6 h-6 text-blue-600">
-                    <path d="m6 9 6 6 6-6"></path>
-                  </svg></div>
+              class="faq-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 transition-colors duration-200">
+              <button type="button"
+                class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+                aria-expanded="false" aria-controls="faq-7">
+                <span class="text-lg font-semibold text-gray-900 pr-4">
+                  У яких випадках можуть позбавити ПМП в Уругваї?
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="faq-icon w-6 h-6 text-blue-600">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </button>
+
+              <div id="faq-7" class="faq-content">
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  ПМП може бути анульовано, якщо виявлять неправдиві дані або підроблені документи, при вчиненні тяжких
+                  умисних злочинів, серйозних порушеннях міграційного законодавства та загрозі громадській безпеці,
+                  а також при тривалій відсутності в країні.
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -887,11 +977,11 @@
           <div class="absolute inset-0 bg-gradient-to-r from-blue-600/95 to-purple-600/95"></div>
         </div>
         <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">Почніть свій шлях до ПМЖ в Уругваї
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">Почніть свій шлях до ПМП в Уругваї
             сьогодні</h2>
           <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">Отримайте доступ до перевіреної інформації, поштових
             інструкцій та особистої підтримки від людини, яка пройшла весь шлях релокації</p><a
-            href="https://t.me/latam_ukr_migration target="_blank" rel="noopener noreferrer"
+            href="https://t.me/latam_ukr_migration target=" _blank" rel="noopener noreferrer"
             class="inline-flex items-center gap-3 bg-white text-blue-600 hover:bg-blue-50 px-10 py-5 rounded-full text-lg font-bold transition-all duration-200 shadow-2xl hover:shadow-3xl hover:scale-105"><svg
               xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
