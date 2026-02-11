@@ -2,6 +2,16 @@
 <html lang="es">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LP026Y0L6K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-LP026Y0L6K');
+  </script>
+
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Uruguay migration</title>
@@ -967,9 +977,9 @@
               <div id="faq-6" class="faq-content">
                 <div class="px-6 pt-4 pb-6 text-gray-600 leading-relaxed">
                   La residencia permanente puede ser anulada si se detecta información falsa o documentos
-                    falsificados,
-                    en caso de delitos graves intencionales, violaciones importantes de la legislación migratoria o
-                    amenazas a la seguridad pública, así como por una ausencia prolongada del país.
+                  falsificados,
+                  en caso de delitos graves intencionales, violaciones importantes de la legislación migratoria o
+                  amenazas a la seguridad pública, así como por una ausencia prolongada del país.
                 </div>
               </div>
             </div>
@@ -1018,6 +1028,18 @@
     </div>
   </div>
 
+  <!-- Scroll to top -->
+  <button id="scroll-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top"
+    style="display:none;position:fixed;bottom:24px;right:24px;z-index:50;width:56px;height:56px;padding:0;border:none;cursor:pointer;border-radius:16777200px;background:linear-gradient(90deg,#155DFC 0%,#9810FA 100%);box-shadow:0 10px 15px -3px rgba(0,0,0,0.10),0 4px 6px -4px rgba(0,0,0,0.10);align-items:center;justify-content:center;transition:opacity 0.3s;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5"></path>
+      <path d="m5 12 7-7 7 7"></path>
+    </svg>
+  </button>
+  <script>
+    (function () { var b = document.getElementById('scroll-to-top'); window.addEventListener('scroll', function () { b.style.display = window.scrollY > 400 ? 'flex' : 'none' }) })();
+  </script>
 
 </body>
 
