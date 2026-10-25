@@ -417,8 +417,12 @@ svg {
 .hero {
   display: flex;
   min-height: 680px;
+  /* centered 1440 block; navy cover bleeds to the left edge on wide screens */
+  padding-inline: max(0px, (100% - 1440px) / 2);
+  background: linear-gradient(90deg, var(--color-navy) 50%, var(--color-white) 50%);
   border-bottom: 1px solid var(--color-line-subtle);
 }
+.hero-content { background: var(--color-white); }
 .hero-cover {
   flex: 0 0 540px;
   display: flex;
@@ -485,7 +489,7 @@ svg {
 }
 
 @media (max-width: 767px) {
-  .hero { display: block; min-height: 0; }
+  .hero { display: block; min-height: 0; padding-inline: 0; background: var(--color-white); }
   .hero > .flag-v { display: none; }
   .hero-cover { padding: 36px var(--space-20) var(--space-32); gap: var(--space-20); }
   .hero-cover .sun { width: 150px; height: 150px; }
@@ -867,6 +871,8 @@ svg {
 
 .article-hero {
   display: flex;
+  padding-inline: max(0px, (100% - 1440px) / 2);
+  background: linear-gradient(90deg, var(--color-white) 50%, var(--color-navy) 50%);
   border-bottom: 1px solid var(--color-line-subtle);
 }
 .article-hero-copy {
@@ -874,7 +880,8 @@ svg {
   display: grid;
   gap: var(--space-20);
   align-content: start;
-  padding: var(--space-56) var(--space-64) var(--space-64) calc(max(0px, (100% - var(--container)) / 2) + var(--gutter));
+  padding: var(--space-56) var(--space-64) var(--space-64) calc(var(--gutter) + var(--space-64));
+  background: var(--color-white);
 }
 .article-hero-copy .crumbs { color: var(--color-muted); }
 .article-hero-copy .crumbs a:hover { color: var(--color-blue); }
@@ -966,7 +973,7 @@ svg {
 }
 
 @media (max-width: 767px) {
-  .article-hero { flex-direction: column; }
+  .article-hero { flex-direction: column; padding-inline: 0; background: var(--color-white); }
   .article-hero > .flag-v { display: none; }
   .article-cover { order: -1; flex-direction: row; justify-content: flex-start; flex-basis: auto; gap: var(--space-16); padding: var(--space-24) var(--space-20); text-align: left; }
   .article-cover .sun { width: 64px; height: 64px; }
