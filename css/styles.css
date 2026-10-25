@@ -699,9 +699,13 @@ svg {
 
 .tg {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 420px;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-56);
   align-items: start;
+}
+.tg-soon {
+  margin-top: var(--space-24);
+  color: var(--color-gold);
 }
 .tg .section-head { margin-bottom: var(--space-28); }
 .tg-list {
