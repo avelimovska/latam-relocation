@@ -604,6 +604,11 @@ svg {
 }
 .cond-body p { color: var(--color-muted); }
 
+.cond-note {
+  margin-top: var(--space-16);
+  color: var(--color-muted);
+}
+
 .plaque {
   display: flex;
   align-items: center;
