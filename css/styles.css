@@ -1022,3 +1022,12 @@ svg {
   .checklist .body-l { font-size: 16px; }
   .next { padding: var(--space-24); gap: 18px; }
 }
+
+/* ---------- privacy page ---------- */
+.privacy { padding: calc(var(--unit) * 6) 0 calc(var(--unit) * 8); max-width: 760px; }
+.privacy .display { margin: 12px 0 20px; }
+.privacy-lead { color: var(--color-muted); margin-bottom: 40px; }
+.privacy-sec { border-top: 1px solid var(--color-line); padding: 24px 0; }
+.privacy-sec .h3 { margin-bottom: 10px; }
+.footer-legal a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 720px) { .privacy { padding: 40px 0 56px; } }
