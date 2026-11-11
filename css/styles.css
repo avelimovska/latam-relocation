@@ -1206,3 +1206,28 @@ svg {
   .cover-logo { width: 104px; padding-top: var(--space-28); }
   .cover-sun { width: 64%; right: -24%; }
 }
+
+/* home teaser card: cover */
+.card-cover {
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  padding: var(--space-28);
+  background: var(--color-paper);
+  border-bottom: 1px solid var(--color-line);
+}
+.card-cover > :not(.cover-sun) { position: relative; z-index: 1; max-width: 68%; }
+.card-cover .cover-bar { margin: var(--space-24) 0 var(--space-20); width: 40px; height: 4px; }
+.card-cover .cover-title { font-size: clamp(24px, 2.1vw, 32px); }
+.card-cover .cover-sub { font-size: 16px; margin-top: var(--space-12); }
+.card-cover .cover-logo { width: 108px; padding-top: var(--space-28); }
+.card-cover .cover-sun { width: 62%; right: -26%; }
+.card--cover .card-body .body-s { color: var(--color-muted); }
+@media (max-width: 767px) {
+  .card-cover { min-height: 0; padding: var(--space-24) var(--space-20); }
+  .card-cover .cover-title { font-size: 26px; }
+  .card-cover .cover-sun { width: 60%; right: -22%; }
+}
