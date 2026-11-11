@@ -29,7 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&amp;family=Onest:wght@400;500;600;700&amp;display=swap">
-  <link rel="stylesheet" href="/css/styles.css?v=6">
+  <link rel="stylesheet" href="/css/styles.css?v=7">
 </head>
 <body>
 <header class="site-header">
@@ -69,19 +69,23 @@
     <div class="container">
       <div class="chips" role="group" aria-label="Фильтр статей"><button class="chip" type="button" data-filter="all" aria-pressed="true">Все</button><button class="chip" type="button" data-filter="who" aria-pressed="false">Кому подходит</button><button class="chip" type="button" data-filter="money" aria-pressed="false">Деньги</button><button class="chip" type="button" data-filter="docs" aria-pressed="false">Документы</button><button class="chip" type="button" data-filter="citizen" aria-pressed="false">Гражданство</button><button class="chip" type="button" data-filter="life" aria-pressed="false">Жизнь</button></div>
       <a class="post-feature" data-cat="who" href="/blog/who-its-for/">
-        <div class="post-visual">
-          <span class="label-s">Документ Nº 01 · Кому подходит</span>
-          <img class="mark" src="/img/mark.svg" alt="" width="300" height="300">
-          <div class="variants">
-            <div class="variant variant--light"><span class="label-s">Вариант 1</span><span class="title-s">Удалёнщики с подушкой</span></div>
-            <div class="variant variant--dark"><span class="label-s">Вариант 2</span><span class="title-s">Прикладные профессии</span></div>
-          </div>
+        <div class="post-visual post-cover" aria-hidden="true">
+          <span class="cover-eyebrow label-s">Кому подходит</span>
+          <span class="cover-bar"></span>
+          <span class="cover-title">Кому подойдёт переезд в&nbsp;Уругвай?</span>
+          <span class="cover-sub">Две категории заявителей</span>
+          <img class="cover-logo" src="/img/logo.svg" alt="" width="132" height="33">
+          <img class="cover-sun" src="/img/mark.svg" alt="" width="300" height="300">
         </div>
         <div class="post-text">
           <div class="post-text-top">
-            <span class="label-s">Главное · начните отсюда</span>
+            <span class="label-s">Документ Nº 01 · Главное · начните отсюда</span>
             <h2 class="h2">Кому подойдёт переезд в Уругвай</h2>
-            <p class="body-m">Этот путь подойдёт не всем, и это нормально. Разбираем две категории людей, для которых он особенно подходит.</p>
+            <p class="body-m">Этот путь подойдёт не всем, и это нормально. Можно выделить две основные категории людей, для которых этот вариант особенно подходит.</p>
+            <ul class="post-preview">
+              <li><span class="post-preview-num label-s">01</span><span class="post-preview-body"><span class="title-s">Удалёнщики с подушкой безопасности</span><span class="body-s">Стабильный удалённый доход на семью, финансовый запас и желание жить в понятной юрисдикции, а не «прыгать по визам».</span></span></li>
+              <li><span class="post-preview-num label-s">02</span><span class="post-preview-body"><span class="title-s">Специалисты прикладных профессий</span><span class="body-s">Востребованная профессия, готовность усиленно учить испанский и запас денег на период адаптации.</span></span></li>
+            </ul>
           </div>
           <span class="link-arrow">Читать статью →</span>
         </div>

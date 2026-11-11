@@ -29,7 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&amp;family=Onest:wght@400;500;600;700&amp;display=swap">
-  <link rel="stylesheet" href="/css/styles.css?v=6">
+  <link rel="stylesheet" href="/css/styles.css?v=7">
 </head>
 <body>
 <header class="site-header">
@@ -69,19 +69,23 @@
     <div class="container">
       <div class="chips" role="group" aria-label="Filtrar artículos"><button class="chip" type="button" data-filter="all" aria-pressed="true">Todos</button><button class="chip" type="button" data-filter="who" aria-pressed="false">Para quién</button><button class="chip" type="button" data-filter="money" aria-pressed="false">Dinero</button><button class="chip" type="button" data-filter="docs" aria-pressed="false">Documentos</button><button class="chip" type="button" data-filter="citizen" aria-pressed="false">Ciudadanía</button><button class="chip" type="button" data-filter="life" aria-pressed="false">Vida</button></div>
       <a class="post-feature" data-cat="who" href="/es/blog/who-its-for/">
-        <div class="post-visual">
-          <span class="label-s">Documento N.º 01 · Para quién</span>
-          <img class="mark" src="/img/mark.svg" alt="" width="300" height="300">
-          <div class="variants">
-            <div class="variant variant--light"><span class="label-s">Opción 1</span><span class="title-s">Remotos con colchón</span></div>
-            <div class="variant variant--dark"><span class="label-s">Opción 2</span><span class="title-s">Profesiones prácticas</span></div>
-          </div>
+        <div class="post-visual post-cover" aria-hidden="true">
+          <span class="cover-eyebrow label-s">Para quién</span>
+          <span class="cover-bar"></span>
+          <span class="cover-title">¿Para quién es Uruguay?</span>
+          <span class="cover-sub">Dos tipos de solicitantes</span>
+          <img class="cover-logo" src="/img/logo.svg" alt="" width="132" height="33">
+          <img class="cover-sun" src="/img/mark.svg" alt="" width="300" height="300">
         </div>
         <div class="post-text">
           <div class="post-text-top">
-            <span class="label-s">Empiece aquí</span>
+            <span class="label-s">Documento N.º 01 · Empiece aquí</span>
             <h2 class="h2">¿Para quién es la mudanza a Uruguay?</h2>
-            <p class="body-m">Este camino no es para todos, y es normal. Analizamos los dos tipos de personas a quienes mejor les conviene.</p>
+            <p class="body-m">Este camino no es para todos, y es normal. Hay dos categorías principales de personas para quienes esta opción es especialmente adecuada.</p>
+            <ul class="post-preview">
+              <li><span class="post-preview-num label-s">01</span><span class="post-preview-body"><span class="title-s">Trabajadores remotos con colchón de seguridad</span><span class="body-s">Ingreso remoto estable para la familia, reservas financieras y ganas de vivir en una jurisdicción clara, sin «saltar entre visas».</span></span></li>
+              <li><span class="post-preview-num label-s">02</span><span class="post-preview-body"><span class="title-s">Especialistas en profesiones prácticas</span><span class="body-s">Una profesión demandada, disposición a aprender español intensivamente y ahorros para el período de adaptación.</span></span></li>
+            </ul>
           </div>
           <span class="link-arrow">Leer el artículo →</span>
         </div>
